@@ -9,7 +9,8 @@
         "yarn.lock"
     ],
     "scripts": {
-        "lint": "eslint",
+        "lint": "eslint --ext .js",
+        "lint:fix": "eslint --fix --ext .js",
         "build": "cross-env NODE_ENV=production rollup -c",
         "dev": "rollup -c --watch",
         "lint-staged": "pretty-quick --staged",
@@ -43,6 +44,7 @@
         "@babel/core": "^7.4.5",
         "@babel/plugin-external-helpers": "^7.2.0",
         "@babel/preset-env": "^7.4.5",
+        "@babel/register": "^7.4.4",
         "cross-env": "^5.2.0",
         "eslint": "^5.16.0",
         "eslint-config-airbnb-base": "^13.1.0",

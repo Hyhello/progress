@@ -7,6 +7,7 @@ const serve = require("rollup-plugin-serve");
 const livereload = require("rollup-plugin-livereload");
 const { terser } = require("rollup-plugin-terser");
 const replace = require("rollup-plugin-replace");
+const { eslint } = require("rollup-plugin-eslint");
 const pkg = require("./package.json");
 
 const pathResolve = dir => path.resolve(__dirname, dir);
@@ -28,17 +29,23 @@ const config = {
             file: pkg.main,
             sourceMap: true,
             banner: banner
+        },
+        {
+            format: "umd",
+            name: "Progress",
+            file: "",
+            sourceMap: true,
+            banner: banner
         }
     ],
     plugins: [
-        resolve({
-            jsnext: true,
-            main: true,
-            browser: true
-        }),
+        resolve(),
         commonjs(),
         alias({
             "@": pathResolve("app")
+        }),
+        eslint({
+            include: ["app/**/*.js"]
         }),
         babel({
             externalHelpers: true,
