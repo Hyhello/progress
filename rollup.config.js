@@ -16,7 +16,7 @@ const version = process.env.VERSION || pkg.version;
 const banner =
     "/*!\n" +
     ` * hyProgress.js v${version}\n` +
-    ` * (c) 2018-${new Date().getFullYear()} Hyhello\n` +
+    ` * @license (c) 2018-${new Date().getFullYear()} Hyhello\n` +
     " * Released under the MIT License.\n" +
     " */";
 const env = process.env.NODE_ENV || "development";
@@ -27,14 +27,14 @@ const config = {
             format: "umd",
             name: "Progress",
             file: pkg.main,
-            sourceMap: true,
+            sourcemap: true,
             banner: banner
         },
         {
-            format: "umd",
+            format: "cjs",
             name: "Progress",
-            file: "",
-            sourceMap: true,
+            file: "./dist/main.cjs.js",
+            sourcemap: true,
             banner: banner
         }
     ],
@@ -53,15 +53,23 @@ const config = {
         }),
         replace({
             "process.env.NODE_ENV": JSON.stringify(env)
+        }),
+        terser({
+            output: {
+                // ascii_only: true, // 仅输出ascii字符
+                comments: function(node, comment) {
+                    var text = comment.value;
+                    var type = comment.type;
+                    if (type == "comment2") {
+                        // multiline comment
+                        return /@preserve|@license|@(c)/i.test(text);
+                    }
+                }
+            },
+            compress: {
+                pure_funcs: ["console.log"] // 去掉console.log函数
+            }
         })
-        // terser({
-        //     output: {
-        //       ascii_only: true // 仅输出ascii字符
-        //     },
-        //     compress: {
-        //       pure_funcs: ['console.log'] // 去掉console.log函数
-        //     }
-        // })
     ]
 };
 
