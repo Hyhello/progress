@@ -1,6 +1,4 @@
-import b from "b";
-
-module.exports = "1231231";
+module.exports = '1231231';
 
 console.log(12);
 
