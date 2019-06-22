@@ -18,11 +18,18 @@
 	},
 	"rules": {
 		"prettier/prettier": "error",
-		"indent": ["error", 4],
+		"indent": 0,
 		"linebreak-style": 0,
 		"no-console": 0,
 		"quotes": ["error", "single"],
-		"semi": ["error", "always"]
+		"semi": ["error", "always"],
+		"generator-star-spacing": "off",
+		"eol-last": 0,
+		"no-tabs": 0,
+		"one-var": 0,
+		"no-mixed-spaces-and-tabs": 0,
+		"no-useless-return": 0,
+		"no-multi-spaces": ["error", { "ignoreEOLComments": true }]
 	},
 	"settings": {
 		"flowtype": {

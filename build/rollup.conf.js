@@ -41,11 +41,12 @@ const config = {
 		}
 	],
 	plugins: [
-		resolve(),
-		commonjs(),
+		flow(),
 		alias({
 			'@': pathResolve('app')
 		}),
+		resolve(),
+		commonjs(),
 		eslint({
 			formatter: require('eslint-friendly-formatter'),
 			include: ['app/**/*.js']
@@ -54,7 +55,6 @@ const config = {
 			externalHelpers: true,
 			exclude: 'node_modules/**'
 		}),
-		flow(),
 		replace({
 			'process.env.NODE_ENV': JSON.stringify(env)
 		}),
