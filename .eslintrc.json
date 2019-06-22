@@ -5,7 +5,8 @@
 		"es6": true,
 		"node": true
 	},
-	"extends": ["airbnb-base", "prettier"],
+	"extends": ["airbnb-base", "plugin:prettier/recommended"],
+	"plugins": ["flowtype"],
 	"globals": {
 		"Atomics": "readonly",
 		"SharedArrayBuffer": "readonly"
@@ -21,5 +22,10 @@
 		"no-console": 0,
 		"quotes": ["error", "single"],
 		"semi": ["error", "always"]
+	},
+	"settings": {
+		"flowtype": {
+			"onlyFilesWithFlowAnnotation": true
+		}
 	}
 }

@@ -3,14 +3,12 @@ const resolve = require('rollup-plugin-node-resolve');
 const commonjs = require('rollup-plugin-commonjs');
 const alias = require('rollup-plugin-alias');
 const babel = require('rollup-plugin-babel');
-const serve = require('rollup-plugin-serve');
-const livereload = require('rollup-plugin-livereload');
 const { terser } = require('rollup-plugin-terser');
 const replace = require('rollup-plugin-replace');
 const { eslint } = require('rollup-plugin-eslint');
-const pkg = require('./package.json');
+const pkg = require('../package.json');
 
-const pathResolve = dir => path.resolve(__dirname, dir);
+const pathResolve = dir => path.resolve(__dirname, '../', dir);
 const version = process.env.VERSION || pkg.version;
 
 const banner =
@@ -21,6 +19,7 @@ const banner =
 	' */';
 const env = process.env.NODE_ENV || 'development';
 const config = {
+	context: pathResolve('/'),
 	input: 'app/index.js',
 	output: [
 		{
@@ -73,20 +72,5 @@ const config = {
 		})
 	]
 };
-
-if (env === 'development') {
-	config.plugins.push(
-		serve({
-			open: true, // 是否打开浏览器
-			contentBase: './', // 入口html的文件位置
-			historyApiFallback: true, // Set to true to return index.html instead of 404
-			host: 'localhost',
-			port: 9527
-		}),
-		livereload({
-			watch: 'dist/' //监听文件夹;
-		})
-	);
-}
 
 module.exports = config;
