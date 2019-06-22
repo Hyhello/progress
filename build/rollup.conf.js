@@ -8,6 +8,7 @@ const livereload = require('rollup-plugin-livereload');
 const { terser } = require('rollup-plugin-terser');
 const replace = require('rollup-plugin-replace');
 const { eslint } = require('rollup-plugin-eslint');
+const filesize = require('rollup-plugin-filesize');
 const flow = require('rollup-plugin-flow-no-whitespace');
 const pkg = require('../package.json');
 
@@ -47,6 +48,7 @@ const config = {
 		}),
 		resolve(),
 		commonjs(),
+		filesize(),
 		eslint({
 			formatter: require('eslint-friendly-formatter'),
 			include: ['src/**/*.js']
