@@ -3,9 +3,12 @@ const resolve = require('rollup-plugin-node-resolve');
 const commonjs = require('rollup-plugin-commonjs');
 const alias = require('rollup-plugin-alias');
 const babel = require('rollup-plugin-babel');
+const serve = require('rollup-plugin-serve');
+const livereload = require('rollup-plugin-livereload');
 const { terser } = require('rollup-plugin-terser');
 const replace = require('rollup-plugin-replace');
 const { eslint } = require('rollup-plugin-eslint');
+const flow = require('rollup-plugin-flow-no-whitespace');
 const pkg = require('../package.json');
 
 const pathResolve = dir => path.resolve(__dirname, '../', dir);
@@ -51,12 +54,13 @@ const config = {
 			externalHelpers: true,
 			exclude: 'node_modules/**'
 		}),
+		flow(),
 		replace({
 			'process.env.NODE_ENV': JSON.stringify(env)
 		}),
 		terser({
 			output: {
-				// ascii_only: true, // 仅输出ascii字符
+				ascii_only: true, // 仅支持ascii字符，非ascii字符将转成\u格式
 				comments: function(node, comment) {
 					var text = comment.value;
 					var type = comment.type;
@@ -67,10 +71,25 @@ const config = {
 				}
 			},
 			compress: {
-				pure_funcs: ['console.log'] // 去掉console.log函数
+				pure_funcs: ['func', 'console.log'] // 去掉console.log函数
 			}
 		})
 	]
 };
+
+if (env === 'development') {
+	config.plugins.push(
+		serve({
+			open: true, // 是否打开浏览器
+			contentBase: './', // 入口html的文件位置
+			historyApiFallback: true, // Set to true to return index.html instead of 404
+			host: 'localhost',
+			port: 9527
+		}),
+		livereload({
+			watch: 'dist/' //监听文件夹;
+		})
+	);
+}
 
 module.exports = config;
