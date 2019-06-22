@@ -1,6 +1,6 @@
 console.log(process.env.NODE_ENV);
-/*  */
-function square(n) {
+/* @flow */
+function square(n: string) {
 	return n * n;
 }
 

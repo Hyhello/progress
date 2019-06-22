@@ -397,7 +397,7 @@
     "@babel/helper-builder-binary-assignment-operator-visitor" "^7.1.0"
     "@babel/helper-plugin-utils" "^7.0.0"
 
-"@babel/plugin-transform-flow-strip-types@^7.0.0":
+"@babel/plugin-transform-flow-strip-types@^7.0.0", "@babel/plugin-transform-flow-strip-types@^7.4.4":
   version "7.4.4"
   resolved "https://registry.yarnpkg.com/@babel/plugin-transform-flow-strip-types/-/plugin-transform-flow-strip-types-7.4.4.tgz#d267a081f49a8705fc9146de0768c6b58dccd8f7"
   integrity sha512-WyVedfeEIILYEaWGAUWzVNyqG4sfsNooMhXWsu/YzOvVGcsnPb5PguysjJqI3t3qiaYj0BR8T2f5njdjTGe44Q==
@@ -908,7 +908,7 @@ babel-eslint@^10.0.2:
     eslint-scope "3.7.1"
     eslint-visitor-keys "^1.0.0"
 
-babylon@^6.15.0, babylon@^6.8.4:
+babylon@^6.8.4:
   version "6.18.0"
   resolved "https://registry.yarnpkg.com/babylon/-/babylon-6.18.0.tgz#af2f3b88fa6f5c1e4c634d1a0f8eac4f55b395e3"
   integrity sha512-q/UEjfGJ2Cm3oKV71DJz9d25TPnq5rhBVL2Q4fA5wcC3jcrdn7+SssEybFIxwAvvP+YCsCYNKughoF33GxgycQ==
@@ -1862,14 +1862,6 @@ flow-remove-types-no-whitespace@^1.0.3:
   dependencies:
     babylon "^6.8.4"
     magic-string "^0.16.0"
-
-flow-remove-types@^1.1.0:
-  version "1.2.3"
-  resolved "https://registry.yarnpkg.com/flow-remove-types/-/flow-remove-types-1.2.3.tgz#6131aefc7da43364bb8b479758c9dec7735d1a18"
-  integrity sha512-ypq/U3V+t9atYiOuSJd40tekCra03EHKoRsiK/wXGrsZimuum0kdwVY7Yv0HTaoXgHW1WiayomYd+Q3kkvPl9Q==
-  dependencies:
-    babylon "^6.15.0"
-    vlq "^0.2.1"
 
 fn-name@~2.0.1:
   version "2.0.1"
@@ -3746,14 +3738,6 @@ rollup-plugin-flow-no-whitespace@^1.0.0:
     flow-remove-types-no-whitespace "^1.0.3"
     rollup-pluginutils "^1.5.2"
 
-rollup-plugin-flow@^1.1.1:
-  version "1.1.1"
-  resolved "https://registry.yarnpkg.com/rollup-plugin-flow/-/rollup-plugin-flow-1.1.1.tgz#6ce568f1dd559666b77ab76b4bae251407528db6"
-  integrity sha1-bOVo8d1Vlma3erdrS64lFAdSjbY=
-  dependencies:
-    flow-remove-types "^1.1.0"
-    rollup-pluginutils "^1.5.1"
-
 rollup-plugin-livereload@^1.0.1:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/rollup-plugin-livereload/-/rollup-plugin-livereload-1.0.1.tgz#b1df6642d55cafcd87dac54bc4f7a657ab859fdf"
@@ -3798,7 +3782,7 @@ rollup-plugin-terser@^5.0.0:
     serialize-javascript "^1.7.0"
     terser "^4.0.0"
 
-rollup-pluginutils@^1.5.1, rollup-pluginutils@^1.5.2:
+rollup-pluginutils@^1.5.2:
   version "1.5.2"
   resolved "https://registry.yarnpkg.com/rollup-pluginutils/-/rollup-pluginutils-1.5.2.tgz#1e156e778f94b7255bfa1b3d0178be8f5c552408"
   integrity sha1-HhVud4+UtyVb+hs9AXi+j1xVJAg=
