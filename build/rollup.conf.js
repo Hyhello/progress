@@ -23,7 +23,7 @@ const banner =
 const env = process.env.NODE_ENV || 'development';
 const config = {
 	context: pathResolve('/'),
-	input: 'app/index.js',
+	input: 'src/index.js',
 	output: [
 		{
 			format: 'umd',
@@ -43,13 +43,13 @@ const config = {
 	plugins: [
 		flow(),
 		alias({
-			'@': pathResolve('app')
+			'@': pathResolve('src')
 		}),
 		resolve(),
 		commonjs(),
 		eslint({
 			formatter: require('eslint-friendly-formatter'),
-			include: ['app/**/*.js']
+			include: ['src/**/*.js']
 		}),
 		babel({
 			externalHelpers: true,
