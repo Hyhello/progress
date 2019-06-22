@@ -18,7 +18,8 @@
 	},
 	"rules": {
 		"prettier/prettier": "error",
-		"indent": 0,
+        "indent": 0,
+        "import/prefer-default-export": 0,
 		"linebreak-style": 0,
 		"no-console": 0,
 		"quotes": ["error", "single"],

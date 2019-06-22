@@ -7,8 +7,5 @@
             }
         }],
         "@babel/preset-flow"
-    ],
-    "plugins": [
-        "@babel/external-helpers"
     ]
 }

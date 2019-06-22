@@ -54,7 +54,6 @@ const config = {
 			include: ['src/**/*.js']
 		}),
 		babel({
-			externalHelpers: true,
 			exclude: 'node_modules/**'
 		}),
 		replace({
