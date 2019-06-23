@@ -7,7 +7,6 @@
 		"node": true
 	},
 	"extends": ["airbnb-base", "plugin:prettier/recommended"],
-	"plugins": ["flowtype"],
 	"globals": {
 		"Atomics": "readonly",
 		"SharedArrayBuffer": "readonly"
@@ -18,8 +17,8 @@
 	},
 	"rules": {
 		"prettier/prettier": "error",
-        "indent": 0,
-        "import/prefer-default-export": 0,
+		"indent": 0,
+		"import/prefer-default-export": 0,
 		"linebreak-style": 0,
 		"no-console": 0,
 		"quotes": ["error", "single"],
@@ -31,10 +30,5 @@
 		"no-mixed-spaces-and-tabs": 0,
 		"no-useless-return": 0,
 		"no-multi-spaces": ["error", { "ignoreEOLComments": true }]
-	},
-	"settings": {
-		"flowtype": {
-			"onlyFilesWithFlowAnnotation": true
-		}
 	}
 }

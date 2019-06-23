@@ -9,7 +9,6 @@ const { terser } = require('rollup-plugin-terser');
 const replace = require('rollup-plugin-replace');
 const { eslint } = require('rollup-plugin-eslint');
 const filesize = require('rollup-plugin-filesize');
-const flow = require('rollup-plugin-flow-no-whitespace');
 const pkg = require('../package.json');
 
 const pathResolve = dir => path.resolve(__dirname, '../', dir);
@@ -42,7 +41,6 @@ const config = {
 		}
 	],
 	plugins: [
-		flow(),
 		alias({
 			'@': pathResolve('src')
 		}),
