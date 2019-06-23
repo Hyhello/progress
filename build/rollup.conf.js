@@ -31,13 +31,6 @@ const config = {
 			file: pkg.main,
 			sourcemap: true,
 			banner: banner
-		},
-		{
-			format: 'cjs',
-			name: 'Progress',
-			file: './dist/main.cjs.js',
-			sourcemap: true,
-			banner: banner
 		}
 	],
 	plugins: [
