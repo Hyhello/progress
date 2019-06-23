@@ -34,12 +34,12 @@ const config = {
 		}
 	],
 	plugins: [
-		alias({
-			'@': pathResolve('src')
-		}),
 		resolve(),
 		commonjs(),
 		filesize(),
+		alias({
+			'@': pathResolve('src')
+		}),
 		eslint({
 			formatter: require('eslint-friendly-formatter'),
 			include: ['src/**/*.js']
