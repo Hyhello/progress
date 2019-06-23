@@ -26,7 +26,7 @@ const config = {
 	input: 'src/index.js',
 	output: [
 		{
-			format: 'umd',
+			format: 'iife',
 			name: 'Progress',
 			file: pkg.main,
 			sourcemap: true,
@@ -49,22 +49,6 @@ const config = {
 		}),
 		replace({
 			'process.env.NODE_ENV': JSON.stringify(env)
-		}),
-		terser({
-			output: {
-				ascii_only: true, // 仅支持ascii字符，非ascii字符将转成\u格式
-				comments: function(node, comment) {
-					var text = comment.value;
-					var type = comment.type;
-					if (type == 'comment2') {
-						// multiline comment
-						return /@preserve|@license|@(c)/i.test(text);
-					}
-				}
-			},
-			compress: {
-				pure_funcs: ['func', 'console.log'] // 去掉console.log函数
-			}
 		})
 	]
 };
@@ -80,6 +64,25 @@ if (env === 'development') {
 		}),
 		livereload({
 			watch: 'dist/' //监听文件夹;
+		})
+	);
+} else {
+	config.plugins.push(
+		terser({
+			output: {
+				ascii_only: true, // 仅支持ascii字符，非ascii字符将转成\u格式
+				comments: function(node, comment) {
+					var text = comment.value;
+					var type = comment.type;
+					if (type == 'comment2') {
+						// multiline comment
+						return /@preserve|@license|@(c)/i.test(text);
+					}
+				}
+			},
+			compress: {
+				pure_funcs: ['func', 'console.log'] // 去掉console.log函数
+			}
 		})
 	);
 }
