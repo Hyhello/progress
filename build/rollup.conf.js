@@ -48,6 +48,7 @@ const config = {
 			exclude: 'node_modules/**'
 		}),
 		replace({
+			__VERSION__: version,
 			'process.env.NODE_ENV': JSON.stringify(env)
 		})
 	]
