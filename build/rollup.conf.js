@@ -36,7 +36,6 @@ const config = {
 	plugins: [
 		resolve(),
 		commonjs(),
-		filesize(),
 		alias({
 			'@': pathResolve('src')
 		}),
@@ -69,6 +68,7 @@ if (env === 'development') {
 	);
 } else {
 	config.plugins.push(
+		filesize(),
 		terser({
 			output: {
 				ascii_only: true, // 仅支持ascii字符，非ascii字符将转成\u格式

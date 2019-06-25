@@ -4,6 +4,14 @@
  * 描述：环形进度条
  */
 
-const Circle = () => {};
+import render from './render';
+
+const Circle = options => {
+	this.$conf = options;
+	// 开始绘制
+	this.render();
+};
+
+render(Circle);
 
 export default Circle;

@@ -5,15 +5,17 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
 		<title>测试界面</title>
+		<style>
+			#canvas {
+				height: 200px;
+			}
+		</style>
 	</head>
 	<body>
 		<div id="canvas"></div>
 		<script src="./dist/progress.min.js"></script>
 		<script>
-			console.log(Progress);
-			Progress(document.getElementById('canvas'), {
-				left: 1
-			});
+			progress(document.getElementById('canvas'));
 		</script>
 	</body>
 </html>
