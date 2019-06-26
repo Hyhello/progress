@@ -11,8 +11,8 @@
 	"scripts": {
 		"lint": "eslint --ext .js",
 		"lint:fix": "eslint --fix --ext .js",
-		"build": "cross-env NODE_ENV=production rollup -c build/rollup.conf.js",
-		"dev": "rollup -c build/rollup.conf.js --watch",
+		"build": "cross-env NODE_ENV=production rollup -c build/rollup.prod.js",
+		"dev": "rollup -c build/rollup.dev.js --watch",
 		"lint-staged": "pretty-quick --staged",
 		"test": "echo \"Error: no test specified\" && exit 1"
 	},
@@ -68,6 +68,7 @@
 		"rollup-plugin-replace": "^2.2.0",
 		"rollup-plugin-serve": "^1.0.1",
 		"rollup-plugin-terser": "^5.0.0",
+		"rollup-plugin-typescript": "^1.0.1",
 		"rollup-watch": "^4.3.1"
 	}
 }
