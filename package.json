@@ -24,7 +24,7 @@
 	"husky": {
 		"hooks": {
 			"pre-commit": "npm run lint-staged",
-			"pre-push": "node ./index.js"
+			"commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
 		}
 	},
 	"lint-staged": {
@@ -42,6 +42,8 @@
 		"@babel/node": "^7.4.5",
 		"@babel/preset-env": "^7.4.5",
 		"@babel/register": "^7.4.4",
+		"@commitlint/cli": "^8.0.0",
+		"@commitlint/config-conventional": "^8.0.0",
 		"babel-eslint": "^10.0.2",
 		"chalk": "^2.4.2",
 		"cross-env": "^5.2.0",
