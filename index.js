@@ -1,1 +1,1 @@
-console.log(__dirname);
+console.log(111111111111111111111111, process.env.HUSKY_GIT_PARAMS);

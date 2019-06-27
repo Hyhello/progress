@@ -24,7 +24,7 @@
 	"husky": {
 		"hooks": {
 			"pre-commit": "npm run lint-staged",
-			"pre-push": "node console.log(process.env.HUSKY_GIT_PARAMS)"
+			"pre-push": "node ./index.js"
 		}
 	},
 	"lint-staged": {
