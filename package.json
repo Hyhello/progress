@@ -45,6 +45,8 @@
 		"@commitlint/cli": "^8.0.0",
 		"@commitlint/config-conventional": "^8.0.0",
 		"babel-eslint": "^10.0.2",
+		"babel-jest": "^24.8.0",
+		"babel-plugin-transform-es2015-modules-commonjs": "^6.26.2",
 		"chalk": "^2.4.2",
 		"cross-env": "^5.2.0",
 		"eslint": "^5.16.0",
