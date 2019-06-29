@@ -4,10 +4,13 @@
 	"env": {
 		"browser": true,
 		"es6": true,
-		"node": true,
-		"jest": true
+		"node": true
 	},
-	"extends": ["airbnb-base", "plugin:prettier/recommended"],
+	"extends": [
+		"airbnb-base",
+		"plugin:jest/recommended",
+		"plugin:prettier/recommended"
+	],
 	"globals": {
 		"arguments": "readonly",
 		"Atomics": "readonly",
@@ -39,5 +42,22 @@
 		],
 		"no-useless-return": 0,
 		"no-multi-spaces": ["error", { "ignoreEOLComments": true }]
-	}
+	},
+	"overrides": [
+		{
+			"files": ["test/**.*.js"],
+			"env": {
+				"jest": true
+			},
+			"plugins": ["jest"],
+			"settings": {
+				"import/resolver": {
+					"alias": {
+						"map": [["@", "./src"]],
+						"extensions": [".ts", ".js", ".jsx", ".json"]
+					}
+				}
+			}
+		}
+	]
 }

@@ -8,7 +8,11 @@
             }
         }]
     ],
-    "plugins": [
-        "transform-es2015-modules-commonjs" // es6 -> commonjs
-    ]
+    "env": {
+        "test": {
+            "plugins": [
+                "transform-es2015-modules-commonjs"
+            ]
+        }
+    }
 }

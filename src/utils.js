@@ -42,3 +42,7 @@ export const _defineProperty = (obj, key, value) => {
 	}
 	return obj;
 };
+
+export const add = (a, b) => {
+	return a + b;
+};
