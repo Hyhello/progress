@@ -32,17 +32,8 @@ export const extend = (target, resource) => {
 
 // 定义属性
 export const _defineProperty = (obj, key, value) => {
-	if (key in obj) {
-		Object.defineProperty(obj, key, {
-			value,
-			enumerable: true
-		});
-	} else {
-		obj[key] = value;
-	}
-	return obj;
-};
-
-export const add = (a, b) => {
-	return a + b;
+	return Object.defineProperty(obj, key, {
+		value,
+		enumerable: true
+	});
 };
