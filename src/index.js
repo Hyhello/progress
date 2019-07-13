@@ -16,7 +16,6 @@ const Progress = function(el, options) {
 			'Progress is a constructor and should be called with the `new` keyword'
 		);
 	}
-	console.log(this);
 	this._init(el, options);
 };
 
