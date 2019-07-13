@@ -10,7 +10,7 @@ import { warn } from './utils';
 // console.log(new Circle());
 
 const Progress = function(el, options) {
-	if (process.env.NODE_ENV !== 'production' && !(this instanceof Progress)) {
+	if (!(this instanceof Progress)) {
 		warn(
 			'Progress is a constructor and should be called with the `new` keyword'
 		);

@@ -4,17 +4,10 @@
  * 描述：debug
  */
 
-import { noop } from './vars';
-// eslint-disable-next-line import/no-mutable-exports
-export let warn = noop;
-// eslint-disable-next-line import/no-mutable-exports
-export let tip = noop;
+export const warn = function(msg) {
+	console.error(`[Progress warn]：${msg}`);
+};
 
-if (process.env.NODE_ENV !== 'production') {
-	warn = function(msg) {
-		console.error(`[Progress warn]：${msg}`);
-	};
-	tip = function(msg) {
-		console.error(`[Progress tip]：${msg}`);
-	};
-}
+export const tip = function(msg) {
+	console.warn(`[Progress tip]：${msg}`);
+};
