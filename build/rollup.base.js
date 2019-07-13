@@ -15,7 +15,7 @@ const env = process.env.NODE_ENV || 'development';
 
 const banner =
 	'/*!\n' +
-	` * ${name}.js v${version}\n` +
+	` * ${pkg.name} v${version}\n` +
 	` * @license (c) 2018-${new Date().getFullYear()} ${author}\n` +
 	' * Released under the MIT License.\n' +
 	' */';
