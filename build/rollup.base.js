@@ -5,7 +5,7 @@ const babel = require('rollup-plugin-babel');
 const replace = require('rollup-plugin-replace');
 const { eslint } = require('rollup-plugin-eslint');
 const pkg = require('../package.json');
-const { pathResolve, toCamel } = require('./utils');
+const { toCamel } = require('./utils');
 const aliass = require('./alias.js');
 
 const name = toCamel(pkg.name);

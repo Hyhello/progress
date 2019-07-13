@@ -12,3 +12,7 @@ exports.toCamel = str => {
 		return $1.toUpperCase();
 	});
 };
+
+exports.convertSep = (str, sep) => {
+	return str.replace(new RegExp(`\\${path.sep}`, 'g'), sep);
+};

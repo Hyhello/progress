@@ -41,21 +41,21 @@
 		"no-useless-return": 0,
 		"no-multi-spaces": ["error", { "ignoreEOLComments": true }]
 	},
+	"settings": {
+		"import/resolver": {
+			"alias": {
+				"map": [["@", "./src"]],
+				"extensions": [".ts", ".js", ".jsx", ".json"]
+			}
+		}
+	},
 	"overrides": [
 		{
 			"files": ["test/**/*.js"],
 			"env": {
 				"jest": true
 			},
-			"plugins": ["jest"],
-			"settings": {
-				"import/resolver": {
-					"alias": {
-						"map": [["@", "./src"]],
-						"extensions": [".ts", ".js", ".jsx", ".json"]
-					}
-				}
-			}
+			"plugins": ["jest"]
 		}
 	]
 }
