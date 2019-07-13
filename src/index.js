@@ -5,10 +5,8 @@
  */
 
 import { warn } from '@/utils/index';
-import initMixin from '@/package/core/index';
-// import Circle from './package/circle';
-
-// console.log(new Circle());
+import initMixin from '@/package/core/init';
+import destroyMixin from '@/package/core/destroy';
 
 const Progress = function(el, options) {
 	if (!(this instanceof Progress)) {
@@ -20,6 +18,7 @@ const Progress = function(el, options) {
 };
 
 initMixin(Progress);
+destroyMixin(Progress);
 
 Progress.version = '__VERSION__';
 

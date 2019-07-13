@@ -12,4 +12,6 @@ export const _hasOwn = _object.hasOwnProperty;
 
 export const _assign = Object.assign;
 
+export const { body } = document;
+
 export const noop = () => {};
