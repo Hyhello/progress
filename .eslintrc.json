@@ -32,14 +32,12 @@
 		"eol-last": 0,
 		"no-tabs": 0,
 		"one-var": 0,
+		"func-names": 0,
 		"no-underscore-dangle": 0,
 		"no-param-reassign": 0,
+		"consistent-return": 0,
 		"no-mixed-spaces-and-tabs": 0,
-		"no-restricted-syntax": [
-			"error",
-			"FunctionExpression",
-			"WithStatement"
-		],
+		"no-restricted-syntax": ["error", "WithStatement"],
 		"no-useless-return": 0,
 		"no-multi-spaces": ["error", { "ignoreEOLComments": true }]
 	},

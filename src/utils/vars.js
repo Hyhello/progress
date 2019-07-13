@@ -11,3 +11,5 @@ export const _toString = _object.toString;
 export const _hasOwn = _object.hasOwnProperty;
 
 export const _assign = Object.assign;
+
+export const noop = () => {};
